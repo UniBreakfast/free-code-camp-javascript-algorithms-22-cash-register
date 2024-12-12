@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cash Register</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="cash-register">
+    <h1>Cash Register</h1>
+
+    <div id="change-due"></div>
+
+    <form>
+      <h3>
+        <label for="price">Price of the item(s):</label>
+        $<input type="number" id="price" min="0" max="9999.99" step="0.01" value="19.50">
+      </h3>
+
+      <h3>
+        <label for="cash">Cash paid by the customer:</label>
+        $<input type="number" id="cash" min="0" max="9999.99" step="0.01" value="20">
+      </h3>  
+
+      <h2>
+        Cash in drawer: 
+        <output id="total">$</output>
+      </h2>
+
+      <div>
+        <label for="hundred">
+          Hundreds: 
+          <output id="hundred-sum">$100</output>
+        </label>
+        <input type="number" id="hundred" min="0" max="1000" step="1" value="1">
+      </div>
+
+      <div>
+        <label for="twenty">
+          Twenties: 
+          <output id="twenty-sum">$60</output>
+        </label>
+        <input type="number" id="twenty" min="0" max="1000" step="1" value="3">
+      </div>
+
+      <div>
+        <label for="ten">
+          Tens: 
+          <output id="ten-sum">$20</output>
+        </label>
+        <input type="number" id="ten" min="0" max="1000" step="1" value="2">
+      </div>
+
+      <div>
+        <label for="five">
+          Fives: 
+          <output id="five-sum">$55</output>
+        </label>
+        <input type="number" id="five" min="0" max="1000" step="1" value="11">
+      </div>
+
+      <div>
+        <label for="one">
+          Ones: 
+          <output id="one-sum">$90</output>
+        </label>
+        <input type="number" id="one" min="0" max="1000" step="1" value="90">
+      </div>
+
+      <div>
+        <label for="quarter">
+          Quarters:
+          <output id="quarter-sum">$4.25</output>
+        </label>
+        <input type="number" id="quarter" min="0" max="1000" step="1" value="17">
+      </div>
+
+      <div>
+        <label for="dime">
+          Dimes:
+          <output id="dime-sum">$3.10</output>
+        </label>
+        <input type="number" id="dime" min="0" max="1000" step="1" value="31">
+      </div>
+
+      <div>
+        <label for="nickel">
+          Nickels:
+          <output id="nickel-sum">$2.05</output>
+        </label>
+        <input type="number" id="nickel" min="0" max="1000" step="1" value="41">
+      </div>
+
+      <div>
+        <label for="penny">
+          Pennies:
+          <output id="penny-sum">$1.01</output>
+        </label>
+        <input type="number" id="penny" min="0" max="1000" step="1" value="101">
+      </div>
+
+      <button id="purchase-btn">Purchase</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
