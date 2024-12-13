@@ -1,4 +1,5 @@
 let price = 19.5;
+let cash = 0;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -51,6 +52,9 @@ const purchaseBtn = document.getElementById('purchase-btn');
 
 purchaseBtn.onclick = handlePurchaseClick;
 
+priceInput.onchange = handlePriceChange;
+cashInput.onchange = handleCashChange;
+
 hundredInput.oninput = handleHundredInput;
 twentyInput.oninput = handleTwentyInput;
 tenInput.oninput = handleTenInput;
@@ -63,6 +67,16 @@ pennyInput.oninput = handlePennyInput;
 
 fillInCID();
 
+function handlePriceChange() {
+  price = priceInput.valueAsNumber;
+  fillInCID();
+}
+
+function handleCashChange() {
+  cash = cashInput.valueAsNumber;
+  fillInCID();
+}
+
 function handleInput(type, inputElement) {
   let item = cid.find(pair => pair[0] === type);
 
@@ -71,7 +85,6 @@ function handleInput(type, inputElement) {
     cid.push(item);
     cid.sort((a, b) => cidOrder.indexOf(a[0]) - cidOrder.indexOf(b[0]));
   }
-
   item[1] = multiply(inputElement.valueAsNumber, dict[type]);
 
   fillInCID();
@@ -116,6 +129,9 @@ function handlePennyInput() {
 function fillInCID() {
   const cidDict = Object.fromEntries(cid);
 
+  priceInput.value = zeroPad(price);
+  cashInput.value = zeroPad(cash) || '';
+
   hundredOut.value = '$' + cidDict['ONE HUNDRED'] || 0;
   twentyOut.value = '$' + cidDict['TWENTY'] || 0;
   tenOut.value = '$' + cidDict['TEN'] || 0;
@@ -157,6 +173,8 @@ function handlePurchaseClick(e) {
       changeDueOut.textContent = format(change);
     }
   }
+
+  fillInCID();
 }
 
 function getChange(cash) {

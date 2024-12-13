@@ -1,5 +1,7 @@
 .cash-register {
   text-align: right;
+  max-width: 400px;
+  margin: 0 auto;
 
   h1 {
     margin-right: 80px;
