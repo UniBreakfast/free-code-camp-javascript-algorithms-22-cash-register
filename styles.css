@@ -2,15 +2,35 @@
   text-align: right;
   max-width: 400px;
   margin: 0 auto;
+  background-color: #f5deb3;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #d35400;
 
   h1 {
     margin-right: 80px;
+    color: #d35400;
+  }
+
+  #change-due {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 70px;
+    background: white;
+    border: 1px solid #d35400;
+    border-radius: 5px;
+    padding: 5px;
   }
 
   h3>input {
     font-size: 20px;
     padding-left: 6px;
     max-width: 100px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    border: 1px solid #d35400;
   }
 
   div {
@@ -36,6 +56,9 @@
     
     >input {
       text-align: center;
+      background-color: #ecf0f1;
+      border-radius: 5px;
+      border: 1px solid #d35400;
     }
   }
 
@@ -44,5 +67,9 @@
     margin-right: 80px;
     padding: 10px 30px;
     font-size: 20px;
+    background-color: #d35400;
+    color: #ecf0f1;
+    border-radius: 5px;
+    border: 1px solid #d35400;
   }
 }
